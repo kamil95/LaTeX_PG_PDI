@@ -1,0 +1,112 @@
+\chapter{Derivation of Pipe-flow Process Model}
+\label{AppendixB}
+Since the derivation of the model is based on physical relationships and conservation principles it would be convenient to study at least once the consecutive steps performed in order to obtain it. This may provide reader with better understanding of the process as well as present assumptions and approximations that are utilized. The model is derived starting from two equations: equation of continuity and equation of motion. The derivation provided below is based on %\cite{billmann_isermann,keerthi_phd}.
+
+\section{Equation of Continuity}
+
+We start from definition of the mass:
+
+\begin{equation}
+\label{eq:mass}
+m = \rho A \Delta z
+\end{equation}
+
+Considering mass change in time, i. e. mass-flow
+
+\begin{equation}
+\label{eq:massflow}
+q = \frac{\partial m}{\partial t} = \rho A  w
+\end{equation}
+
+and then, introducing principle of conservation for elementary pipe segment we obtain
+
+\begin{equation}
+\label{eq:massflow2}
+\frac{\partial m}{\partial t} = \rho A w - A\left(w + \frac{\partial w}{\partial z}\Delta z\right) \left( \rho + \frac{\partial \rho}{\partial z}\Delta z\right) 
+\end{equation}
+
+Substituting (\ref{eq:mass}) to  (\ref{eq:massflow2}) we obtain
+
+\begin{equation}
+\label{eq:massflow3}
+\frac{\partial \left( \rho A \Delta z \right)}{\partial t} = \rho A  w - A\left( \rho w + \Delta z \left( \rho \frac{\partial w}{\partial z} +w \frac{\partial \rho}{\partial z} \right)+\frac{\partial w}{\partial z} \Delta z  \frac{\partial \rho}{\partial z} \Delta z  \right) 
+\end{equation}
+
+where the last term $\frac{\partial w}{\partial z} \Delta z  \frac{\partial \rho}{\partial z} \Delta z$ is small enough to be neglected. Then, substituting
+
+\begin{equation}
+\label{eq:ms4}
+\rho \frac{\partial w}{\partial z} +w \frac{\partial \rho}{\partial z} = \frac{\partial}{\partial z} \left( \rho w \right)
+\end{equation}
+
+as
+
+\begin{equation}
+\label{eq:ms5}
+\frac{\partial}{\partial z} \left( \rho w \right) + \frac{\partial \rho}{\partial t} = 0
+\end{equation}
+
+Assuming, that the process is isothermal we can introduce
+
+\begin{equation}
+\label{eq:ms6}
+\nu = \sqrt{\frac{p}{\rho}}
+\end{equation}
+
+thus, substituting (\ref{eq:massflow}) and (\ref{eq:ms6}) to (\ref{eq:ms5}) we obtain first equation of our model:
+
+\begin{equation}
+\label{eq:cont_fin3}
+\frac{A}{\nu^2} \frac{\partial p}{\partial t} + \frac{\partial q}{\partial z} = 0
+\end{equation}
+
+
+\section{Equation of Motion}
+
+Here we start from definition of momentum:
+
+\begin{equation}
+\label{eq:mm1}
+M = \rho A \Delta z w
+\end{equation}
+
+then,using principle of conservation:
+
+\begin{equation}
+\label{eq:mm2}
+\frac{\partial \left( \rho A w \Delta z \right)}{\partial t} = A \left(p + \frac{\rho w^2}{2} \right) - A\left(p + \frac{\partial p}{\partial z} \Delta z + \frac{\rho w^2}{2} + \frac{\partial}{\partial z} \left( \frac{\rho w^2}{2} \right) \Delta z \right) - F - Y
+\end{equation}
+
+By rearranging equation presented above, we obtain:
+
+\begin{equation}
+\label{eq:mm3}
+\frac{\partial \left( \rho A w \Delta z \right)}{\partial t} = A \left(p + \frac{\rho w^2}{2} \right) - A\left(\left(p + \frac{\rho w^2}{2} \right) + \Delta z \left( \frac{\partial p}{\partial z} +  \frac{\partial}{\partial z} \left( \frac{\rho w^2}{2} \right) \right)\right) - F - Y
+\end{equation}
+
+Substituting 
+
+\begin{equation}
+\label{eq:mm4}
+ \frac{\partial}{\partial z} \left(p +  \frac{\rho w^2}{2} \right) = \frac{\partial p}{\partial z} +  \frac{\partial}{\partial z} \left( \frac{\rho w^2}{2} \right) 
+\end{equation}
+
+into (\ref{eq:mm3}) we will obtain
+\begin{equation}
+\label{eq:mm5}
+\frac{\partial \left( \rho  w  \right)}{\partial t} = -  \frac{\partial}{\partial z} \left(p +  \frac{\rho w^2}{2} \right) - F- Y
+\end{equation}
+
+Again, assuming that the process is isothermal we obtain:
+
+\begin{equation}
+\label{eq:mm_fin}
+\frac{1}{A} \frac{\partial q}{\partial t} + \left( 1 - \frac{q^2 \nu^2}{2 A^2 p}\right) \frac{\partial p}{\partial z} + \frac{q \nu^2}{A^2 p} \frac{\partial q}{\partial z}= - \frac{\lambda \nu^2}{2DA^2} \frac{q|q|}{p} - \frac{g sin \alpha}{\nu^2} p
+\end{equation}
+
+Taking into account, that if $w^2 \ll \nu^2$, i. e. velocity of the fluid is significantly lower than velocity of the sound in this fluid, we may neglect term $ \frac{q^2 \nu^2}{2 A^2 p}$. Moreover, if the pipeline is long, then we may neglect term $ \frac{q \nu^2}{A^2 p}$. Thus, we obtain second equation that is included in physical, continuous time model:
+
+\begin{equation}
+\label{eq:momen_fin3}
+\frac{1}{A} \frac{\partial q}{\partial t} + \frac{\partial p}{\partial z} = - \frac{\lambda \nu^2}{2DA^2} \frac{q|q|}{p} - \frac{g sin \alpha}{\nu^2} p
+\end{equation}
