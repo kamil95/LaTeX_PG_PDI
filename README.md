@@ -2,9 +2,11 @@
 #### Engineering Thesis - Politechnika Gdańska
 
 ---
+
 first version by Kamil Trzebiatowski
 
 first uploaded version: 2017.11.27
+
 ---
 
 ### Compiler: **XeLaTeX**
