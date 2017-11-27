@@ -15,4 +15,5 @@ insert your chapters in: Chapters/ChaptersMain.tex
 insert your appendices in: Appendices/AppendicesMain.tex
 
 Bibliography manager: BibLaTex
+
 insert bibliography items in: bibliografia.bib
