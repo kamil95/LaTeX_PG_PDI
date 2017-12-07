@@ -52,6 +52,7 @@
 
 % WCZYTANIE PLIKU BIBLIOGRAFII
 \usepackage[backend=biber, style=numeric-comp, sorting=none, maxnames=4, minnames=2, maxbibnames=99]{biblatex}
+
 \addbibresource{bibliografia.bib}
 \usepackage{csquotes}
 
@@ -106,29 +107,24 @@
 
 
 % ------------------------------------------------ %
-
-%kropki po numeracji:
-\renewcommand{\thechapter}{\arabic{chapter}.}
-\renewcommand{\thesection}{\thechapter\arabic{section}.}
-\renewcommand{\thesubsection}{\thesection\arabic{subsection}.}
-
 %88888888888888888888%
 \usepackage{nameref}
 \makeatletter
 \newcommand*{\currentname}{\@currentlabelname}
 %88888888888888888888%
 
+%formatowanie naglowkow, kropki po numeracji:
 \titleformat{\chapter}
 {\large\bfseries}
-{\thechapter}{0.5em}{\MakeUppercase{#1}}
+{\thechapter.}{0.5em}{\MakeUppercase{#1}}
 
 \titleformat{\section}
 {\normalfont\bfseries\itshape}
-{\thesection}{0.5em}{#1}
+{\thesection.}{0.5em}{#1}
 
 \titleformat{\subsection}
 {\normalfont\itshape}
-{\thesubsection}{0.5em}{#1}
+{\thesubsection.}{0.5em}{#1}
 %------------------------------%
 
 %% POLSKIE NAZWY - ZMIANA NA WYMAGANE %%
@@ -147,19 +143,18 @@
 \usepackage{caption,setspace}
 \usepackage{subcaption}
 \addto\captionspolish{\renewcommand{\figurename}{Rys.}}
-\captionsetup{labelsep=space}
+\captionsetup{labelsep=period}
 
 \captionsetup{font={small, stretch=1.0}}     		%  FONT 9 pt Interlinia 1 pt
 \captionsetup{belowskip=12pt,aboveskip=6pt}%Górny odstęp akapitu powinien być ustawiony na wartość 6 pkt, a dolny 12 pkt
 \captionsetup{justification=centering}		% wysrodkowanie
-\renewcommand{\thefigure}{\thechapter\arabic{figure}.} % set caption label style to 1.1.
+%\renewcommand{\thefigure}{\thechapter\arabic{figure}} % set caption label style to 1.1.
 \setlength{\belowcaptionskip}{-10pt}
 
 %--------------%%%%%%%%%%--------------%
 
 % FORMATOWANIE PODPISOW NAD TABELAMI %
 \addto\captionspolish{\renewcommand{\tablename}{Tabela}}
-\captionsetup{labelsep=space}
 
 %\captionsetup[table]{belowskip=0pt,aboveskip=6pt}%Górny odstęp akapitu powinien być ustawiony na wartość 6 pkt, a dolny 0 pkt
 %\captionsetup[table]{justification=justified}		
@@ -169,13 +164,13 @@
 font={small, stretch=1.1}, %  FONT 9 pt Interlinia ~1.1 pt
   justification=justified,% wyrownanie  do lewej
   singlelinecheck=false,%%%%%%% a single line is centered by default
-  labelsep=space,%%%%%%
+  labelsep=period,%%%%%%
   belowskip=0pt, % skip pod/nad tabela
   aboveskip=6pt,% skip pod/nad tabela
   skip = 1.5mm, %skip pod nazwa tabeli
 }
 
-\renewcommand{\thetable}{\thechapter\arabic{table}.} % set caption label style to 1.1.
+%\renewcommand{\thetable}{\thechapter\arabic{table}.} % set caption label style to 1.1.
 
 \usepackage{tabularx}
 \renewcommand{\arraystretch}{1.4} %wysokosc wiersza TABELI (teraz ok. 0,5 cm)
@@ -192,7 +187,7 @@ font={small, stretch=1.1}, %  FONT 9 pt Interlinia ~1.1 pt
 % ---------------------------------------%
 
 %-------- FORMATOWANIE SPISU TRESCI --------%
-\usepackage{titletoc}
+\usepackage[dotinlabels]{titletoc}
 \usepackage{tocloft}
 %\usepackage[nottoc]{tocbibind}
 %\usepackage{afterpage}
