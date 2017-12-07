@@ -21,7 +21,6 @@
 
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 
-%\renewcommand{\familydefault}{\sfdefault}
 \usepackage{blindtext}
 \usepackage{geometry}
 \usepackage{indentfirst}
@@ -29,24 +28,28 @@
 \usepackage{amsmath} %paczka do rownan
 \renewcommand{\theequation}{\thechapter.\arabic{equation}} %rownania postaci 2.1, 3.2
 
+% ladowanie grafiki
 \usepackage{graphicx}
 \graphicspath{ {Images/} } %sciezka do obrazkow
+%
 
 \newcommand\tab[1][1cm]{\hspace*{#1}}%komenda - tabulator, uzycie: tab[x], gdzie x jest dlugoscia akapitu
 \newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
 
+% formatowanie wyliczen (listy kropkowanej)
 \usepackage{enumitem}
 \setlist[itemize]{noitemsep, topsep=0pt}
+%
 
 % FORMATOWANIE NAGLOWKOW %
 \usepackage[explicit]{titlesec}
 \usepackage{lipsum}
-%
+%%%%%
 %FORMATOWANIE PRZYPISOW
 \renewcommand{\footnotesize}{\small}
 \usepackage{chngcntr}
 \counterwithout{footnote}{chapter}
-%
+%%%%
 
 \usepackage[toc,page]{appendix}
 
@@ -91,9 +94,6 @@
 
 \DeclareFieldFormat{journaltitle}{#1} % normal journal title
 
-% \usepackage[hyphenbreaks]{breakurl}
-% \usepackage[hyphens]{url}
-
 \usepackage{hyperref}
 \usepackage{bookmark}
 \def\UrlBreaks{\do\/\do-}
@@ -104,16 +104,17 @@
 \urlstyle{same}
 \DefineBibliographyStrings{polish}{urlseen = {data dostępu:}}
 \DeclareFieldFormat{url}{\color{blue}\url{#1}}
-
+% ------------------------------------------------ %
 
 % ------------------------------------------------ %
+%%   formatowanie naglowkow, kropki po numeracji  %%
 %88888888888888888888%
 \usepackage{nameref}
 \makeatletter
 \newcommand*{\currentname}{\@currentlabelname}
 %88888888888888888888%
 
-%formatowanie naglowkow, kropki po numeracji:
+
 \titleformat{\chapter}
 {\large\bfseries}
 {\thechapter.}{0.5em}{\MakeUppercase{#1}}
@@ -235,8 +236,8 @@ font={small, stretch=1.1}, %  FONT 9 pt Interlinia ~1.1 pt
 \setlength{\cftbeforelottitleskip}{-15pt} %LOT = SPIS TABEL
 \setlength{\cftafterlottitleskip}{12pt} %LOT
 
-%\setlength{\cftbeforebibltitleskip}{-15pt} %LOF =  SPIS RYSUNKOW
-%\setlength{\cftafterbibltitleskip}{12pt} %LOF
+%\setlength{\cftbeforebibltitleskip}{-15pt} %BIB = WYKAZ LITERATURY
+%\setlength{\cftafterbibltitleskip}{12pt} %BIB = WYKAZ LITERATURY
 %  -------------------------------------------------------- %
 
 
@@ -340,18 +341,14 @@ Dekaruję zgodność produktu z dyrektywą 2006/112/UE oraz 2014/35/UE i normami
 
 % DODATKI
 % formatowanie naglowkow dodatkow
-\renewcommand\theHchapter{\Alph{chapter}.}
-\renewcommand\thechapter{\Alph{chapter}.}                % chapter number in alph letters
-\renewcommand\thesection{\Alph{chapter}.\arabic{section}.} % make sections "A.I"
+\renewcommand\theHchapter{\Alph{chapter}}
+\renewcommand\thechapter{\Alph{chapter}}                % chapter number in alph letters
+\renewcommand\thesection{\Alph{chapter}.\arabic{section}} % make sections "A.I"
 \setcounter{chapter}{0}                                  % start numbering chapters from 1 on again
-\titleformat{\chapter}{\large\bfseries}{\MakeUppercase{\appendixname~\thechapter~\currentname}}{0.5em}{}
+\titleformat{\chapter}{\large\bfseries}{\MakeUppercase{\appendixname~\thechapter.~\currentname}}{0.5em}{}
 
 \titlecontents{chapter}[0cm]{}{\normalsize\bfseries{Dodatek\space}\contentslabel{-1pt}\hspace*{0.6cm}}{}{\titlerule*[3pt]{.}\hspace*{5pt}\contentspage}
 
-
-
-%\renewcommand*{\theHsection}{\theHchapter.\the\value{section}}
-%\appendix
 \input{Appendices/AppendicesMain}
 
 \end{document}
