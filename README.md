@@ -17,4 +17,4 @@ first uploaded version: 2017.11.27
 - insert bibliography items in: **bibliografia.bib**
 
 --- 
-test 06.04.2018
+test 06.04.2018;
