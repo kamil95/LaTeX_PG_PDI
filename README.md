@@ -1,4 +1,4 @@
-## LaTeX Template 
+﻿## LaTeX Template 
 #### Engineering Thesis - Politechnika Gdańska
 
 ---
@@ -15,3 +15,6 @@ first uploaded version: 2017.11.27
 
 #### Bibliography manager: **BibLaTeX**
 - insert bibliography items in: **bibliografia.bib**
+
+--- 
+test 06.04.2018
