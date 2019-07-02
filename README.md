@@ -1,11 +1,13 @@
 ﻿## LaTeX Template 
-#### Engineering Thesis - Politechnika Gdańska
+#### Engineering Thesis / Master's Thesis - Politechnika Gdańska / Gdańsk University of Technology
 
 ---
 
 first version by Kamil Trzebiatowski
 
 first uploaded version: 2017.11.27
+
+current version: 2019.07.02
 
 ---
 
@@ -15,6 +17,10 @@ first uploaded version: 2017.11.27
 
 #### Bibliography manager: **BibLaTeX**
 - insert bibliography items in: **bibliografia.bib**
+
+#### Custom Math font:
+- change \setmathfont{[fontname.ttf]} in main.tex
+- upload font to folder where main.tex is
 
 --- 
 test 06.04.2018;
