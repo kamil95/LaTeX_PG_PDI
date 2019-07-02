@@ -1,5 +1,5 @@
 ﻿## LaTeX Template 
-#### Engineering Thesis / Master's Thesis - Politechnika Gdańska / Gdańsk University of Technology
+#### Engineer's Thesis / Master's Thesis - Politechnika Gdańska / Gdańsk University of Technology
 
 ---
 
