@@ -1,7 +1,7 @@
 % Latex Template
-% Politechnika Gdańska - Szablon Pracy Dyplomowej (Inżynierskiej)
+% Politechnika Gdańska - Szablon Pracy Dyplomowej (Inżynierskiej/Magisterskiej)
 % first version by Kamil Trzebiatowski
-% version 2017.11.27
+% this version: 2019.07.02
 
 % Compiler: XeLaTex
 
@@ -31,6 +31,8 @@
 % ladowanie grafiki
 \usepackage{graphicx}
 \graphicspath{ {Images/} } %sciezka do obrazkow
+
+\usepackage{float}
 %
 
 \newcommand\tab[1][1cm]{\hspace*{#1}}%komenda - tabulator, uzycie: tab[x], gdzie x jest dlugoscia akapitu
@@ -63,16 +65,17 @@
 \renewcommand*{\finalnamedelim}{\multinamedelim} %usuniecie finalnego 'i'
 
 \renewbibmacro*{volume+number+eid}{%
-,\space vol.
+\iffieldundef{volume}{}{,\space vol.
   \printfield{volume}%
   \setunit*{\addspace}%
 ,\space nr
   \printfield{number}%,
 ,
   \setunit{\addcomma\space}%
-  \printfield{eid}
+  \printfield{eid}}
 }
-
+%\DeclareFieldFormat[article]{volume}{,vol. #1 }
+%\DeclareFieldFormat[article]{number}{ nr #1}
 
 \DeclareFieldFormat[article]{citetitle}{#1}
 \DeclareFieldFormat[article]{title}{#1}
@@ -104,6 +107,8 @@
 \urlstyle{same}
 \DefineBibliographyStrings{polish}{urlseen = {data dostępu:}}
 \DeclareFieldFormat{url}{\color{blue}\url{#1}}
+%\DeclareFieldFormat{url}{\url{#1}}
+
 % ------------------------------------------------ %
 
 % ------------------------------------------------ %
@@ -150,7 +155,10 @@
 \captionsetup{belowskip=12pt,aboveskip=6pt}%Górny odstęp akapitu powinien być ustawiony na wartość 6 pkt, a dolny 12 pkt
 \captionsetup{justification=centering}		% wysrodkowanie
 %\renewcommand{\thefigure}{\thechapter\arabic{figure}} % set caption label style to 1.1.
-\setlength{\belowcaptionskip}{-10pt}
+\setlength{\belowcaptionskip}{0pt}
+\setlength{\floatsep}{0pt}
+\setlength{\intextsep}{10pt}
+\setlength{\textfloatsep}{10pt}
 
 %--------------%%%%%%%%%%--------------%
 
@@ -200,7 +208,16 @@ font={small, stretch=1.1}, %  FONT 9 pt Interlinia ~1.1 pt
 \titlecontents{subsection}
   [1.5cm]{}{\normalsize\contentslabel{-1pt}\hspace*{1.4cm}}{}{\titlerule*[3pt]{.}\hspace*{5pt}\contentspage}
 
-
+\usepackage{listings}
+\usepackage{courier}
+\lstset{basicstyle=\footnotesize\ttfamily,breaklines=true}
+\lstset{
+  basicstyle = \footnotesize\ttfamily,
+  basewidth  = {.5em,0.5em},
+  breaklines = true,
+  % columns  = flexible,
+  % columns  = fullflexible,
+}
 %ustalanie interlinii
 \setlength\cftparskip{-0.6pt}
 \setlength\cftbeforechapskip{0pt}
@@ -240,18 +257,18 @@ font={small, stretch=1.1}, %  FONT 9 pt Interlinia ~1.1 pt
 %\setlength{\cftafterbibltitleskip}{12pt} %BIB = WYKAZ LITERATURY
 %  -------------------------------------------------------- %
 
-
+%\usepackage{showframe}
 %% FONTY
 \usepackage{unicode-math}
 \usepackage{fontspec}
 \setmainfont{Arial}
-
+\usepackage{pdfpages}
 % Alternative Math fonts - change to yours or uncomment something %
 %\usepackage[varg]{txfonts}
 %\usepackage{newtxtext}
 %\usepackage{newtxmath}
 %\usepackage{newtxmath}
-%\setmathfont{[CambriaMath-02.ttf]}
+\setmathfont{[CambriaMath-02.ttf]}
 %\setmathfont{Computer Modern}
 % --------------------------------------------------------------- %
 \usepackage{multirow}
@@ -263,12 +280,12 @@ font={small, stretch=1.1}, %  FONT 9 pt Interlinia ~1.1 pt
 \setlength{\parskip}{1em}
 
 \title{
-	{Praca dyplomowa inżynierska - szablon LATEX
+	{Praca/Projekt dyplomowa/y magisterska/inżynierski - szablon LATEX
     }\\
 	{\large Politechnika Gdańska}\\
 	{\includegraphics{pg_logo.jpg}}
 }
-\author{Kamil Trzebiatowski - 2017}
+\author{Kamil Trzebiatowski - 2019}
 \date{\textbf{[PLACEHOLDER - Tę stronę należy zastąpić wydrukiem z Moja PG]}}
 
 \geometry{
@@ -287,19 +304,19 @@ font={small, stretch=1.1}, %  FONT 9 pt Interlinia ~1.1 pt
 \begin{document}
  
 % STRONA TYTULOWA PRACY DYPLOMOWEJ - s 1, numer niewidoczny
-\begin{titlepage}
-\pagestyle{plain}
-\pagenumbering{arabic}
-\setcounter{page}{1}
-\maketitle
-\end{titlepage}
-
+% \begin{titlepage}
+% \pagestyle{plain}
+% \pagenumbering{arabic}
+% \setcounter{page}{1}
+% \maketitle
+% \end{titlepage}
+\includepdf[pages={1}]{StronaTytulowa.pdf}
 \setlength{\parskip}{0pt}
 % OSWIADCZENIE AUTORA PRACY - s 2, numer niewidoczny
-\chapter*{Deklaracja zgodności}
-\normalsize
-Dekaruję zgodność produktu z dyrektywą 2006/112/UE oraz 2014/35/UE i normami PN-EN 1176-1:2009, PN-EN 1939:2007.\par\textbf{[PLACEHOLDER - Tę stronę należy zastąpić wydrukiem z Moja PG]}
-
+% \chapter*{Deklaracja zgodności}
+% \normalsize
+% Dekaruję zgodność produktu z dyrektywą 2006/112/UE oraz 2014/35/UE i normami PN-EN 1176-1:2009, PN-EN 1939:2007.\par\textbf{[PLACEHOLDER - Tę stronę należy zastąpić wydrukiem z Moja PG]}
+\includepdf[pages={1}]{Oswiadczenie.pdf}
 % STRESZCZENIE  - s 3, numer widoczny
 \input{Chapters/Streszczenie}
 
