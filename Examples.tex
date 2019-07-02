@@ -1,14 +1,28 @@
-  
-% WZOR DODAWANIA OBRAZKA - w nawiasach kwadratowych, np. [ht] formatowanie położenia
+% WZOR PISANIA TEKSTU CIAGLEGO
+% \par -> tekst zaczyna sie od akapitu (wciecia)
+\par Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+\par The sixth and last chapter summarizes the whole work, indicates elements for improvement and opportunities for further development.
+\newline
+\newline %wymuszona przerwa (enter)
+\par Lorem ipsum dolor sit amet.
 
-\begin{figure}
+\textit{Internet of Things}) %kursywa
+\textbf{UHF} %wytluszczenie
+
+\cite{bibelment} %cytowanie elementu bibliografii bibelement
+\ref{figure10} % odwolanie sie do elementu figure10
+\eqref{xx} % odwolanie sie do rownania xx
+
+% WZOR DODAWANIA OBRAZKA - w nawiasach kwadratowych, np. [H] formatowanie położenia
+
+\begin{figure}[H]
   \centering
   \includegraphics[height=3cm]{Karulauk.jpg}
   \caption{Obraz numer 2}
   \label{figure:example1}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[H]
   \centering
   \includegraphics[height=3cm]{Karulauk.jpg}
   \caption{Obraz numer 10}
@@ -20,12 +34,18 @@
 \begin{equation} \label{mc2}
 E = mc^2
 \end{equation}
+
 \begin{equation} \label{beta}
 \beta = \omega\sqrt{\mu\varepsilon}
 \end{equation}
+
 Z równania \eqref{mc2} i \eqref{beta}, po kilku prostych przekształceniach, otrzymujemy równanie \eqref{kkk}.
 \begin{equation} \label{kkk}
 \beta = \frac{\omega}{c}
+\end{equation}
+
+\begin{equation} \label{eqCzulosc}
+\gamma =   \frac{U_{wy}}{P_{we}}
 \end{equation}
 
 \begin{equation} \label{test}
@@ -35,3 +55,57 @@ z = \overbrace{
     \underbrace{y}_\text{imaginary}
     }^\text{complex number}
 \end{equation}
+
+\begin{equation} \label{eqConj1}
+Z_{in} = \left\{
+  \begin{array}{lr}
+    R_{in} + j X_{in} & \text{gdy}\quad f = f_1\\
+    R_{in} - j X_{in} & \text{gdy}\quad f = f_2
+  \end{array}
+\right.
+\end{equation}
+
+% WZOR LISTY WYPUNKTOWANEJ
+\begin{itemize}
+\item{first element}
+\item{second element}
+\item{third element}
+\item{fourth element}
+\end{itemize}
+
+% WZOR TABELI
+\begin{table}[H]
+\centering
+\caption{Porównanie parametrów różnych diod}
+\label{Tab1}
+\small
+\begin{tabularx}{\textwidth}{ |X|X|X|X|X| }
+\hline
+Dioda & Typ & Napięcie\newline$Vt\:[mV]$ & Rezystancja $Rs\:[Ω]$& Pojemność $Cj\:[pF]$ \\
+  \hline
+HSMS-285x \cite{hsms285x} & Schottky'ego & 100 ÷ 150 & 25 & 0,18 \\
+\hline
+SMS7630 \cite{sms7630} & Schottky'ego & 60 ÷ 120 & 20 & 0,14 \\
+\hline
+1N4148 \cite{1n4148} & krzemowa pn & 500 ÷ 600 & 0,5 & 1 ÷ 4 \\
+\hline
+\end{tabularx}
+\end{table}
+
+\begin{table}[H]
+\centering
+\caption{Wymiary układu}
+\label{TabWymiary}
+\small
+\begin{tabularx}{\textwidth}{ |X|X|X|X|X|X|}
+\hline
+Przenikalność względna $\varepsilon_r$ & $W_{50}$ [mm] & $A_{S}$ [°]& $L_S$ [mm]& $W_X$ [mm] & $L_X$ [mm] \\
+  \hline
+4,3 & 1,95 & 25 & 21 & 0,33 & 36\\
+  \hline
+4,5 & 1,88 & 25 & 20,4  & 0,33 & 35,4\\
+  \hline
+4,7 & 1,82 & 25 & 19,8 & 0,33 & 35,0\\
+\hline
+\end{tabularx}
+\end{table}
