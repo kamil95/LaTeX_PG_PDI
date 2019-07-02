@@ -20,11 +20,11 @@ current version: 2019.07.02
 
 #### Custom Math font:
 - change \setmathfont{[mathfont.ttf]} in main.tex
-- upload font to folder where main.tex is
+- copy font file to main folder where main.tex is
 
-### Additional info:
-- insert StronaTytulowa.pdf (generated from MojaPG)
-- insert Oswiadczenie.pdf (generated from MojaPG)
+#### Additional info:
+- insert StronaTytulowa.pdf in main folder (generated from MojaPG)
+- insert Oswiadczenie.pdf in main folder (generated from MojaPG)
 
 --- 
 
