@@ -22,5 +22,9 @@ current version: 2019.07.02
 - change \setmathfont{[mathfont.ttf]} in main.tex
 - upload font to folder where main.tex is
 
+### Additional info:
+- insert StronaTytulowa.pdf (generated from MojaPG)
+- insert Oswiadczenie.pdf (generated from MojaPG)
+
 --- 
-test 06.04.2018;
+
