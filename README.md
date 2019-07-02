@@ -19,7 +19,7 @@ current version: 2019.07.02
 - insert bibliography items in: **bibliografia.bib**
 
 #### Custom Math font:
-- change \setmathfont{[fontname.ttf]} in main.tex
+- change \setmathfont{[mathfont.ttf]} in main.tex
 - upload font to folder where main.tex is
 
 --- 
