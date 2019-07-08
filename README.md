@@ -17,6 +17,7 @@ current version: 2019.07.02
 
 #### Bibliography manager: **BibLaTeX**
 - insert bibliography items in: **bibliografia.bib**
+- backend: **biber** - in MikTex run biber first, then XeLaTex
 
 #### Custom Math font:
 - change \setmathfont{[mathfont.ttf]} in main.tex
