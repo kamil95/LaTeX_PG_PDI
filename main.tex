@@ -1,7 +1,7 @@
 % Latex Template
 % Politechnika Gdańska - Szablon Pracy Dyplomowej (Inżynierskiej/Magisterskiej)
 % first version by Kamil Trzebiatowski
-% this version: 2019.09.05
+% this version: 2019.07.02
 
 % Compiler: XeLaTex
 
@@ -28,19 +28,12 @@
 \usepackage{amsmath} %paczka do rownan
 \renewcommand{\theequation}{\thechapter.\arabic{equation}} %rownania postaci 2.1, 3.2
 
-\usepackage{textgreek} %inline greek characters
-
 % ladowanie grafiki
 \usepackage{graphicx}
 \graphicspath{ {Images/} } %sciezka do obrazkow
 
 \usepackage{float}
 %
-
-
-\usepackage{caption}
-\usepackage{subcaption}
-
 
 \newcommand\tab[1][1cm]{\hspace*{#1}}%komenda - tabulator, uzycie: tab[x], gdzie x jest dlugoscia akapitu
 \newcommand*{\noaddvspace}{\renewcommand*{\addvspace}[1]{}}
@@ -74,16 +67,13 @@
 \renewbibmacro*{volume+number+eid}{%
 \iffieldundef{volume}{}{,\space vol.
   \printfield{volume}%
-  \iffieldundef{number}{}{\setunit*{\addspace}%
+  \setunit*{\addspace}%
 ,\space nr
   \printfield{number}%,
 ,
   \setunit{\addcomma\space}%
-  \printfield{eid}}}
+  \printfield{eid}}
 }
-
-\DefineBibliographyStrings{polish}{andothers = {et\addabbrvspace al\adddot}}
-
 %\DeclareFieldFormat[article]{volume}{,vol. #1 }
 %\DeclareFieldFormat[article]{number}{ nr #1}
 
@@ -107,22 +97,18 @@
 
 \DeclareFieldFormat{journaltitle}{#1} % normal journal title
 
-\renewbibmacro{in:}{%
-  \ifentrytype{article}
-    {}
-    {\printtext{\bibstring{in}\intitlepunct}}}
-
 \usepackage{hyperref}
 \usepackage{bookmark}
 \def\UrlBreaks{\do\/\do-}
+
 % Format Bibliography @online articles
 \usepackage{color}
 %\usepackage{url}
 \urlstyle{same}
 \DefineBibliographyStrings{polish}{urlseen = {data dostępu:}}
 \DeclareFieldFormat{url}{\color{blue}\url{#1}}
-\DeclareFieldFormat{doi}{\newline\color{blue}\href{https://doi.org/#1}{doi:#1}}
 %\DeclareFieldFormat{url}{\url{#1}}
+
 % ------------------------------------------------ %
 
 % ------------------------------------------------ %
@@ -329,7 +315,7 @@ font={small, stretch=1.1}, %  FONT 9 pt Interlinia ~1.1 pt
 % OSWIADCZENIE AUTORA PRACY - s 2, numer niewidoczny
 % \chapter*{Deklaracja zgodności}
 % \normalsize
-% Deklaruję zgodność produktu z dyrektywą 2006/112/UE oraz 2014/35/UE i normami PN-EN 1176-1:2009, PN-EN 1939:2007.\par\textbf{[PLACEHOLDER - Tę stronę należy zastąpić wydrukiem z Moja PG]}
+% Dekaruję zgodność produktu z dyrektywą 2006/112/UE oraz 2014/35/UE i normami PN-EN 1176-1:2009, PN-EN 1939:2007.\par\textbf{[PLACEHOLDER - Tę stronę należy zastąpić wydrukiem z Moja PG]}
 \includepdf[pages={1}]{Oswiadczenie.pdf}
 % STRESZCZENIE  - s 3, numer widoczny
 \input{Chapters/Streszczenie}
