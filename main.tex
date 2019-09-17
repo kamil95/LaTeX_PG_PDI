@@ -1,10 +1,8 @@
 % Latex Template
 % Politechnika Gdańska - Szablon Pracy Dyplomowej (Inżynierskiej/Magisterskiej)
 % first version by Kamil Trzebiatowski
-% this version: 2019.09.05
-
+% this version: 2019.09.17
 % Compiler: XeLaTex
-
 % insert your chapters in: Chapters/ChaptersMain.tex
 % insert your appendices in: Appendices/AppendicesMain.tex
 
@@ -36,7 +34,7 @@
 
 \usepackage{float}
 %
-
+\usepackage{wrapfig}
 
 \usepackage{caption}
 \usepackage{subcaption}
@@ -82,7 +80,7 @@
   \printfield{eid}}}
 }
 
-\DefineBibliographyStrings{polish}{andothers = {et\addabbrvspace al\adddot}}
+\DefineBibliographyStrings{polish}{andothers = {\textit{et\addabbrvspace al\adddot}}}
 
 %\DeclareFieldFormat[article]{volume}{,vol. #1 }
 %\DeclareFieldFormat[article]{number}{ nr #1}
@@ -211,7 +209,7 @@ font={small, stretch=1.1}, %  FONT 9 pt Interlinia ~1.1 pt
 
 %-------- FORMATOWANIE SPISU TRESCI --------%
 \usepackage[dotinlabels]{titletoc}
-\usepackage{tocloft}
+
 %\usepackage[nottoc]{tocbibind}
 %\usepackage{afterpage}
 
@@ -232,23 +230,11 @@ font={small, stretch=1.1}, %  FONT 9 pt Interlinia ~1.1 pt
   % columns  = flexible,
   % columns  = fullflexible,
 }
-%ustalanie interlinii
-\setlength\cftparskip{-0.6pt}
-\setlength\cftbeforechapskip{0pt}
-
-\renewcommand{\cfttoctitlefont}{\large\bfseries\MakeUppercase}
-\renewcommand{\cftaftertoctitle}{\hfill}
 % --------------------------------------------------------%
 
 %- FORMATOWANIE LIST OF TABLES, LIST OF FIGURES -%
 \titlecontents{figure}[0cm]{}{\normalsize\contentslabel{-1pt}\hspace*{1cm}}{}{\titlerule*[3pt]{.}\hspace*{5pt}\contentspage}
 \titlecontents{table}[0cm]{}{\normalsize\contentslabel{-1pt}\hspace*{1cm}}{}{\titlerule*[3pt]{.}\hspace*{5pt}\contentspage}
-
-\renewcommand{\cftlottitlefont}{\large\bfseries\MakeUppercase}
-\renewcommand{\cftafterlottitle}{\hfill}
-
-\renewcommand{\cftloftitlefont}{\large\bfseries\MakeUppercase}
-\renewcommand{\cftafterloftitle}{\hfill}
 % --------------------------------------------------------%
 
 % POPRAWKA NA MARGINESY (akapity) TYTUŁÓW %
@@ -257,18 +243,6 @@ font={small, stretch=1.1}, %  FONT 9 pt Interlinia ~1.1 pt
 
 \titlespacing*{\section}{0pt}{12pt}{6pt}
 \titlespacing*{\subsection}{0pt}{12pt}{6pt}
-
-\setlength{\cftbeforetoctitleskip}{-15pt} %TOC = SPIS TRESCI
-\setlength{\cftaftertoctitleskip}{12pt} %TOC = SPIS TRESCI
-
-\setlength{\cftbeforeloftitleskip}{-15pt} %LOF =  SPIS RYSUNKOW
-\setlength{\cftafterloftitleskip}{12pt} %LOF
-
-\setlength{\cftbeforelottitleskip}{-15pt} %LOT = SPIS TABEL
-\setlength{\cftafterlottitleskip}{12pt} %LOT
-
-%\setlength{\cftbeforebibltitleskip}{-15pt} %BIB = WYKAZ LITERATURY
-%\setlength{\cftafterbibltitleskip}{12pt} %BIB = WYKAZ LITERATURY
 %  -------------------------------------------------------- %
 
 %\usepackage{showframe}
