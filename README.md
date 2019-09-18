@@ -20,6 +20,7 @@ current version: 2019.09.17
 - backend: **biber** - in MikTex run biber first, then XeLaTex
 
 #### Custom Math font:
+- uncomment \setmathfont{[mathfont.ttf]}
 - change \setmathfont{[mathfont.ttf]} in main.tex
 - copy font file to main folder where main.tex is
 
